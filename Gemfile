@@ -8,10 +8,13 @@ gem 'rails', '~> 6.0.0.rc1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
-gem 'dotenv-rails'
 
-# gem 'uri'
+#all the stuff I custom installed
+gem 'dotenv-rails'
+gem 'bootstrap', '~> 4.3.1'
 gem 'http'
+
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

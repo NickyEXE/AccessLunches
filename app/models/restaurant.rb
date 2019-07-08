@@ -4,7 +4,6 @@ class Restaurant < ApplicationRecord
 
 
 
-
     # Called on seeding only
 
     def self.get_restaurants_from_yelp
@@ -14,7 +13,7 @@ class Restaurant < ApplicationRecord
             longitude: -73.989666,
             limit: 50,
             term: "lunch",
-            radius: 300
+            radius: 500
         }
         response = HTTP.auth("Bearer #{ENV['API_KEY']}").get(url, params: params)
         businesses = response.parse["businesses"]

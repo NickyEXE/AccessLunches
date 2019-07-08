@@ -1,0 +1,16 @@
+
+<h1>The Food Near Access Labs</h1>
+
+<div class="deck-container">
+    <div class="card-deck deck2">
+    <% @restaurants.each do |restaurant|%>
+    <div class="card deck-card">
+        <img class="card-img-top index-image" src=<%= restaurant.image_url %> alt=<%= restaurant.name %>>
+        <div class="card-img-overlay custom-img-overlay">
+        <h1 class="card-text"><%= restaurant.name  %></h1>
+        </div>
+    </div>
+    <% end%>
+    </div>
+</div>
+</div>
