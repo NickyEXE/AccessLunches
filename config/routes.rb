@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :reviews, only: [:create, :destroy]
 
+  post '/restaurants', to: "restaurants#find", as: "find_restaurant"
   get '/login', to: "auth#new", as: "login"
   post '/login', to: "auth#create", as: "authorize"
   delete '/login', to: "auth#destroy", as: "logout"

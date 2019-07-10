@@ -1,4 +1,5 @@
-<h5><%= link_to "View All Restaurants", restaurants_path %>
+<h5><%= link_to "View All Restaurants", restaurants_path %></h5>
+
 <div class="jumbotron" style="background-image:url(<%= @restaurant.image_url %>)">
   <h1 class="display-4"><%= link_to @restaurant.name, @restaurant.url %></h1>
   <h3>Filed under: <%= @restaurant.kind_of_food %></h3>

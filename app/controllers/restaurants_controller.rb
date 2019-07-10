@@ -12,5 +12,10 @@ class RestaurantsController < ApplicationController
     end
 
 
+    def find
+        redirect_to Restaurant.find_by(id: params[:restaurant][:restaurant_id])
+    end
+
+
 
 end
