@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   # resources :reviews, only: [:create]
   post '/reviews', to: "reviews#create"
-
+  get '/', to: "restaurants#index"
 
 end
