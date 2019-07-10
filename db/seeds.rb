@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+Restaurant.get_all_restaurants_from_yelp

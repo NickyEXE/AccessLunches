@@ -5,4 +5,12 @@ Rails.application.routes.draw do
   post '/login', to: "auth#create", as: "authorize"
   delete '/login', to: "auth#destroy", as: "logout"
 
+
+  post '/restaurants/find', to: "restaurants#find", as: "find"
+  resources :users, only: [:new, :create]
+  post '/comment/:id', to: "reviews#comment", as: "comment"
+
+  resources :restaurants, only: [:index, :show]
+
+
 end

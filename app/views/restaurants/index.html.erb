@@ -1,4 +1,15 @@
 <strong><h1>The Food Near Access Labs</h1>
+<h3><marquee>©DON'T GO JSON WATERFALLS FORMERLY RUBY DOOBY DOO 2019©</marquee></h3>
+<h5 class="blinking">©©©©©DO NOT STEAL©©©©©</h5>
+
+
+<div class="custom-form-card">
+<h5>RUBY DOOBY DOO'S INCREDIBLE QUICK FINDER</h5>
+<%= form_for :restaurant, url: find_path do |f|%>
+<%= f.collection_select(:id, @restaurants, :id, :name) %>
+<%= f.submit "FIND MY RESTAURANT", class: "btn btn-default btn-danger" %>
+<% end %>
+</div>
 
 
 <div class="deck-container">

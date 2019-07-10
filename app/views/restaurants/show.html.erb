@@ -9,13 +9,15 @@
 
 
 <h3 class="custom-form-card">
-<%= form_for @review, :html => {:class => "form-horizontal center"} do |f| %>
+<%= form_for :review, url: comment_path, :html => {:class => "form-horizontal center"} do |f| %>
     <%= f.label :comment, "", class: "col-md-4 control-label" %>
     <%= f.text_area :comment, class: "form-control" %>
     <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
     <%= f.submit "Post", class: "btn btn-default btn-danger" %>
 <% end%>
 </h3>
+
+
 
 <% if @reviews%>
   <% @reviews.each do |review|%>
@@ -26,7 +28,6 @@
   </h6>
   <% end%>
 <% end%>
-
 
 <script>
     function changeColor(){
