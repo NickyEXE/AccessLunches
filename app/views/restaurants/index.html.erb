@@ -1,10 +1,26 @@
 <strong><h1>The Food Near Access Labs</h1>
+<h3><marquee>©DON'T GO JSON WATERFALLS FORMERLY RUBY DOOBY DOO 2019©</marquee></h3>
+<h5 class="blinking" style="color:yellow">©©©©©DO NOT STEAL©©©©©</h5>
 
-<h1>Quick Finder:</h1>
-<%= form_for(:restaurant, url: find_restaurant_path) do |f| %>
-    <%= f.collection_select(:restaurant_id, @restaurants, :id, :name)%>
-    <%= f.submit "Find!" %>
+
+<div class="custom-form-card">
+<h5>ERIC'S FAST TRAVEL MACHINE</h5>
+
+<%= form_tag(find_path) do %>
+<!-- https://stackoverflow.com/questions/8907867/can-someone-explain-collection-select-to-me-in-clear-simple-terms -->
+    <%= collection_select :restaurant, :id, @restaurants, :id, :name  %>
+    <%= submit_tag "FIND!", class: "btn btn-default btn-danger" %>
 <% end %>
+</div>
+
+<!--This is how you do it with a form_for, the only difference is that the first argument is given by the assignment of the form
+<%= form_for :restaurant, url: find_path do |f| %>
+<%= f.collection_select :cheese, @restaurants, :id, :name  %>
+<%= f.submit "FIND!" %>
+<% end %>
+-->
+
+
 
 
 <div class="deck-container">
@@ -12,7 +28,7 @@
     <% @restaurants.each do |restaurant|%>
     <div class="card">
         <img class="card-img-top index-image" src=<%= restaurant.image_url %> alt=<%= restaurant.name %>>
-        <%=link_to(restaurant) do %>
+        <%=link_to (restaurant) do %>
             <div class="card-img-overlay">   
             <h1 class="card-text"><%= restaurant.name  %></h1>   
             </div>

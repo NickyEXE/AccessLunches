@@ -1,30 +1,29 @@
 class Restaurant < ApplicationRecord
-
     has_many :reviews
-    has_many :restaurants, through: :reviews
+    has_many :users, through: :reviews
 
 
-
-
-    # Called on seeding only
-
+    def cheese
+        puts "cheese"
+    end
     def self.get_restaurants_from_yelp
         url = "https://api.yelp.com/v3/businesses/search"
         params = {
-            latitude: 40.700866,
-            longitude: -73.989666,
-            limit: 50,
-            term: "lunch",
-            radius: 500
+          term: "lunch",
+          latitude: 40.700862,
+          longitude: -73.987472,
+          limit: 50,
+          radius: 500
         }
-        response = HTTP.auth("Bearer #{ENV['API_KEY']}").get(url, params: params)
-        businesses = response.parse["businesses"]
-        businesses.each do |business|
-            self.create_business_from_yelp_data(business)
+        response = HTTP.auth("Bearer #{ENV["API_KEY"]}").get(url, params: params)
+        response.parse
+        response.parse["businesses"].each do |business|
+            Restaurant.create_restaurant_from_yelp_business(business)
         end
     end
 
-    def self.create_business_from_yelp_data(business)
+
+    def self.create_restaurant_from_yelp_business(business)
         Restaurant.create(name: business["name"], url: business["url"], image_url: business["image_url"], lat: business["coordinates"]["latitude"], long: business["coordinates"]["longitude"], address: business["location"]["address1"], kind_of_food: business["categories"][0]["title"])
     end
 

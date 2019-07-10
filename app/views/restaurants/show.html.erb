@@ -17,15 +17,17 @@
 <% end%>
 </h3>
 
+
 <% if @reviews%>
-  <% @reviews.each do |review|%>
-  <div class="username">
-  <%= review.user.username %></div>
-  <h6 class="custom-post-card">
-  <%=review.comment%>
-  </h6>
+    <% @reviews.each do |review|%>
+    <div class="username">
+    <%= review.user.username %></div>
+    <h6 class="custom-post-card">
+    <%=review.comment%>
+    </h6>
   <% end%>
 <% end%>
+
 
 
 <script>
