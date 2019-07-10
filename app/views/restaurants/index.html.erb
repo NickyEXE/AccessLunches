@@ -1,11 +1,5 @@
 <strong><h1>The Food Near Access Labs</h1>
 
-<h1>Quick Finder:</h1>
-<%= form_for(:restaurant, url: find_restaurant_path) do |f| %>
-    <%= f.collection_select(:restaurant_id, @restaurants, :id, :name)%>
-    <%= f.submit "Find!" %>
-<% end %>
-
 
 <div class="deck-container">
     <div class="card-deck">
