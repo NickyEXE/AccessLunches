@@ -13,6 +13,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'dotenv-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'http'
+gem 'bcrypt', '~> 3.1.7'
 
 
 # Use Puma as the app server

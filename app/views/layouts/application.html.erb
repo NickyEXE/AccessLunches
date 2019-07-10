@@ -9,7 +9,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="background-color:black;">
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <h3><%= error%></h3>
+      <% end%>
+    <% end%>
+        <% if @current_user%>
+    <h5><%= link_to "Logout", logout_path, method: :delete %></h5>
+    <% end%>
+
     <center>
     <%= yield %>
     </center>

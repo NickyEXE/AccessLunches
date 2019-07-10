@@ -5,9 +5,11 @@
     <% @restaurants.each do |restaurant|%>
     <div class="card">
         <img class="card-img-top index-image" src=<%= restaurant.image_url %> alt=<%= restaurant.name %>>
-        <div class="card-img-overlay">
-        <h1 class="card-text"><%= restaurant.name  %></h1>
-        </div>
+        <%=link_to(restaurant) do %>
+            <div class="card-img-overlay">   
+            <h1 class="card-text"><%= restaurant.name  %></h1>   
+            </div>
+        <%end%>
     </div>
     <% end%>
     </div>

@@ -1,5 +1,7 @@
 class Restaurant < ApplicationRecord
 
+    has_many :reviews
+    has_many :restaurants, through: :reviews
 
 
 
@@ -23,7 +25,7 @@ class Restaurant < ApplicationRecord
     end
 
     def self.create_business_from_yelp_data(business)
-        Restaurant.create(name: business["name"], url: business["url"], image_url: business["image_url"], lat: business["coordinates"]["latitude"], long: business["coordinates"]["latitude"], address: business["location"]["address1"], kind_of_food: business["categories"][0]["title"])
+        Restaurant.create(name: business["name"], url: business["url"], image_url: business["image_url"], lat: business["coordinates"]["latitude"], long: business["coordinates"]["longitude"], address: business["location"]["address1"], kind_of_food: business["categories"][0]["title"])
     end
 
 end

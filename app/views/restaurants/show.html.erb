@@ -1,0 +1,35 @@
+<h5><%= link_to "View All Restaurants", restaurants_path %>
+<div class="jumbotron" style="background-image:url(<%= @restaurant.image_url %>)">
+  <h1 class="display-4"><%= link_to @restaurant.name, @restaurant.url %></h1>
+  <h3>Filed under: <%= @restaurant.kind_of_food %></h3>
+  <h5><%= @restaurant.address %></h5>
+  </p>
+</div>
+
+
+<h3 class="custom-form-card">
+<%= form_for @review, :html => {:class => "form-horizontal center"} do |f| %>
+    <%= f.label :comment, "", class: "col-md-4 control-label" %>
+    <%= f.text_area :comment, class: "form-control" %>
+    <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
+    <%= f.submit "Post", class: "btn btn-default btn-danger" %>
+<% end%>
+</h3>
+
+<% if @reviews%>
+  <% @reviews.each do |review|%>
+  <div class="username">
+  <%= review.user.username %></div>
+  <h6 class="custom-post-card">
+  <%=review.comment%>
+  </h6>
+  <% end%>
+<% end%>
+
+
+<script>
+    function changeColor(){
+	document.querySelector(".custom-form-card").style.borderColor == "rgb(11, 255, 64)" ? document.querySelector(".custom-form-card").style.borderColor = "rgb(255, 105, 180)" : document.querySelector(".custom-form-card").style.borderColor = "rgb(11, 255, 64)"}
+    document.querySelector(".custom-form-card").style.borderColor = "rgb(11, 255, 64)"
+    setInterval(() => changeColor(), 300)
+</script>
