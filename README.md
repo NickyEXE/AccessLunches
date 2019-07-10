@@ -1,27 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WE WILL BE BUILDING A RAILS APP TO REVIEW THE LUNCH SPOTS BY ACCESS LABS
 
-Things you may want to cover:
+This app currently has:
+  >An Auth Model
+  >A User and Restaurant class
+  >Bootstrap and some custom CSS
+  >A few show views
 
-* Ruby version
+It needs:
+  >Data from Yelp
+  >Routing
+  >Controller Actions
+  >The ability to create a user
+  >A Reviews model and active record relations
+  >The ability to add a review
+  
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
