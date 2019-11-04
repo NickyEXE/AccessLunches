@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   # resources :reviews, only: [:create]
   post '/reviews', to: "reviews#create"
   get '/', to: "restaurants#index"
+  
 
 end
